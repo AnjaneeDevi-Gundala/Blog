@@ -1,7 +1,60 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}Home{% endblock %}
+{% block css %}
 
+<style>
+    /* Default font size */
+    h1 {
+        font-size: 4vw;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    p {
+        font-size: 1.6vw;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    a.btn {
+        font-size: 2vw;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        font-weight: bold;
+    }
+
+    /* For smaller screens (e.g., tablets) */
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 6vw; /* Increase font size */
+        }
+
+        p {
+            font-size: 2.3vw;
+        }
+
+        a.btn {
+            font-size: 3vw;
+        }
+    }
+
+    /* For even smaller screens (e.g., mobile phones) */
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 8vw;
+        }
+
+        p {
+            font-size: 3vw;
+        }
+
+        a.btn {
+            margin-top: 3%;
+            font-size: 4vw;
+        }
+    }
+</style>
+
+{% endblock %}
 {% block content %}
 <br>
 <div class="row align-items-center" style="width: 100%;">
@@ -10,13 +63,13 @@
     </div>
     <div class="col-md-6">
         <br>
-        <h1 class="text-center text-primary fw-bold" style="font-size: 4vw;font-family: 'Times New Roman', Times, serif;">Welcome to Your  <br>Blog Haven!</h1>
-        <p class="text-center" style="font-size: 1.6vw;font-family: 'Times New Roman', Times, serif;">
+        <h1 class="text-center text-primary fw-bold">Welcome to Your  <br>Blog Haven!</h1>
+        <p class="text-center">
             Discover, create, and share <br>your thoughts with the world. <br>
             Our platform makes it simple to express yourself,<br> connect with like-minded individuals, <br> and explore diverse perspectives.
         </p> 
-        <div class="text-center" style="font-family: 'Times New Roman', Times, serif;">
-            <a href="{% url 'myapp:create' %}" class="btn btn-primary" style="padding-left: 2vw;padding-right: 2vw;font-weight: bold;font-size: 2vw;">Create Blog</a>
+        <div class="text-center">
+            <a href="{% url 'myapp:create' %}" class="btn btn-primary">Create Blog</a>
         </div>
     </div>
 </div>
