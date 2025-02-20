@@ -47,7 +47,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'blog-o48z55gor-anjaneedevi-gundalas-projects.vercel.app'
+    '.vercel.app'  # Allows any subdomain of vercel.app
 ]
 
 
