@@ -1,12 +1,11 @@
 {
   "version": 2,
   "builds": [
-    
     {
       "src": "build_files.sh",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "staticfiles"
+        "distDir": "static"
       }
     },
     {
@@ -20,7 +19,7 @@
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "/staticfiles/$1"
+      "dest": "/static/$1"
     },
     {
       "src": "/(.*)",
