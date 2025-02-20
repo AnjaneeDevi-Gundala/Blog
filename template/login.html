@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'pen-nib-solid.svg' %}">
+</head>
+
+<body>
+    <div id="container">
+        <form action="" method="post">
+            {% csrf_token %}
+            <h1 id="title">Blog</h1>
+            <div class="input">
+                <input type="text" placeholder="Enter User Name *" name="username" id="user_name"><br>
+            </div>
+            <div class="input">
+                <input type="password" placeholder="Enter password *" name="password" id="password">
+                <img src="{% static 'Eye.svg' %}" onclick="toggleVisibility()" id="eye">
+            </div>
+            {% if error %}
+            <p class="alert alert-danger" style="color: red;">{{ error }}</p> 
+            {% endif %} <br>
+            <button id="submit" type="submit">Log in</button><br>
+            <p id="account">Don't have an account? <a href="{% url 'myapp:register' %}" id="signup">Signup</a></p><br>
+            <a href="{% url 'myapp:password_reset' %}" id="forgot">Forgot password</a>
+        </form>
+    </div>
+    <script src="{% static 'login.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#container{
+    width: 90%;
+    max-width: 400px;
+}
+form{
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.525);
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.587);
+    background-color: white;
+    text-align: center;
+}
+#title{
+    font-family: 'Brush Script MT', cursive;
+    font-size: 3rem;
+    color: rgba(11, 10, 10, 0.842);
+    margin-bottom: 20px;
+}
+.input{
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 5px;
+}
+#eye{
+    width: 20px;
+    cursor: pointer;
+}
+#submit{
+    width: 100%;
+    padding: 10px;
+    background-color: blue;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+#account, #forgot{
+    font-size: 1rem;
+    margin-top: 10px;
+}
+#signup{
+    text-decoration: none;
+    color: black;
+}
+#user_name,#password{
+    width: 100%;
+}
+#forgot{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}

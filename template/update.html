@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg p-4">
+                <h1 class="text-center text-primary fw-bold" style="font-family: 'Times New Roman', Times, serif;">
+                    Create Blog</h1>
+                <form action="" method="post" enctype="multipart/form-data" id="feedbackForm">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Upload Image</label>
+                        <input type="file" class="form-control" name="img" accept="image/*" id="image">
+                        {% if form3.instance.img %}
+                        <br>
+                        <p>Current Image: <img src="{{ form3.instance.img.url }}" width="100"></p>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="author_name" class="form-label">Author Name</label>
+                        <input type="text" class="form-control" name="author" value="{{ form3.instance.author }}"
+                            placeholder="Enter Author name" id="author_name">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="text" class="form-label">Blog Title</label>
+                        <input type="text" class="form-control" name="title" value="{{ form3.instance.title }}"
+                            placeholder="Enter Title" id="text">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="desc" class="form-label">Description</label>
+                        <textarea class="form-control" name="description" id="desc" rows="5"
+                            placeholder="Enter Description">{{ form3.instance.description }}</textarea>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary" id="submit">Update</button>
+                    </div>
+
+                    <div id="responseMessage" class="mt-3 text-center"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'create.js' %}" defer></script>
+
+{% endblock %}

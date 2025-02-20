@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'register.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'pen-nib-solid.svg' %}">
+</head>
+
+<body>
+    <div id="container">
+        <form action="" method="post" id="register-form">
+            {% csrf_token %}
+            <h1 id="title">Blog</h1>
+            <p id="desc">Join now to share your stories and <br> start your blogging journey!</p>
+
+            <div class="input">
+                <input type="text" placeholder="Enter First Name *" name="first_name" id="first_name">
+            </div>
+            <h4 id="first_name_error"></h4>
+
+            <div class="input">
+                <input type="text" placeholder="Enter Last Name *" name="last_name" id="last_name">
+            </div>
+            <h4 id="last_name_error"></h4>
+
+            <div class="input">
+                <input type="email" placeholder="Enter email *" name="email" id="email">
+            </div>
+            <h4 id="email_error"></h4>
+
+            <div class="input">
+                <input type="text" placeholder="Enter User Name *" name="username" id="user_name">
+            </div>
+            <h4 id="user_name_error"></h4>
+
+            <div class="input">
+                <input type="password" placeholder="Enter password *" name="password" id="password">
+                <img src="{% static 'Eye.svg' %}" onclick="toggleVisibility()" id="eye">
+            </div>
+            <h4 id="password_error"></h4>
+
+            <button id="submit" type="submit">Sign up</button>
+            {% if form.errors %}
+            <ul>
+                {% for field in form %}
+                {% for error in field.errors %}
+                <p class="error">{{ error }}</p>
+                {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                <p class="error">{{ error }}</p>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            <p id="account">Already have an account? <a href="{% url 'myapp:login' %}" id="login">Login</a></p>
+        </form>
+    </div>
+
+    <script src="{% static 'register.js' %}"></script>
+</body>
+
+</html>

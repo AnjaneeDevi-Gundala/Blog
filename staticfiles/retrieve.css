@@ -1,0 +1,46 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#container_div{
+    width: 100%;
+}
+.card{
+    float: left;
+    margin-left: 6%;
+    width: 23rem;
+    margin-top: 6%;
+    transition: scale 0.3s;
+}
+.card-img-top{
+    height: 195px;
+
+}
+.card:hover{
+    scale: 1.1;
+    cursor: pointer;
+}
+.card-text,.card-title{
+    text-align: justify;
+}
+.card-author{
+    float: right;
+    font-size: 11.5px;
+    font-weight: bold;
+    font-family: Lucida Handwriting;
+}
+#update{
+    background-color: rgb(17, 177, 17);
+    border: none;
+}
+#delete{
+    background-color: rgba(244, 28, 28, 0.9);
+    border: none;
+}
+.card-title:hover{
+    text-decoration: underline;
+}
+.desc{
+    width: 100%;
+    height: 100px;
+}

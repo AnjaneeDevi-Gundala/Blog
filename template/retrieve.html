@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'retrieve.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="container_div">
+  {% for i in data %}
+
+  <div class="card">
+    <img class="card-img-top" src="{{i.img.url}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{i.title}}</h5>
+      <div class="desc">
+        <p class="card-text">{{i.description}}
+      </div>
+      </p>
+      <div id="buttons">
+        <a href="{% url 'myapp:update' i.id %}" class="btn btn-primary" id="update">Update</a>
+        <a href="{% url 'myapp:delete' i.id %}" class="btn btn-primary" id="delete">Delete</a> <br>
+        <h5 class="card-author">- {{i.author}}</h5>
+      </div>
+
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

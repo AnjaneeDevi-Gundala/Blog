@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<br>
+<div class="row align-items-center" style="width: 100%;">
+    <div class="col-md-6 text-center">
+        <img src="{% static 'Blog.png' %}" alt="Idea Image" class="img-fluid" style="max-width: 30vw; height: auto;">
+    </div>
+    <div class="col-md-6">
+        <br>
+        <h1 class="text-center text-primary fw-bold" style="font-size: 4vw;font-family: 'Times New Roman', Times, serif;">Welcome to Your  <br>Blog Haven!</h1>
+        <p class="text-center" style="font-size: 1.6vw;font-family: 'Times New Roman', Times, serif;">
+            Discover, create, and share <br>your thoughts with the world. <br>
+            Our platform makes it simple to express yourself,<br> connect with like-minded individuals, <br> and explore diverse perspectives.
+        </p> 
+        <div class="text-center" style="font-family: 'Times New Roman', Times, serif;">
+            <a href="{% url 'myapp:create' %}" class="btn btn-primary" style="padding-left: 2vw;padding-right: 2vw;font-weight: bold;font-size: 2vw;">Create Blog</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
